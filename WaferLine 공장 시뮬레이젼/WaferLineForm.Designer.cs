@@ -70,6 +70,8 @@ namespace WaferLine_공장_시뮬레이젼
             this.Controls.Add(this.wlc);
             this.Name = "WaferLineForm";
             this.Text = "WaferLineForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WaferLineForm_FormClosing);
+            this.Load += new System.EventHandler(this.WaferLineForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

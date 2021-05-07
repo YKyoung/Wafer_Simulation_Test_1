@@ -10,6 +10,13 @@ namespace WaferLlineLib
 {
     public class WaferLine : IEnumerable<Wafer>
     {
+
+        public event AddWaferEventHandler AddedWafer;
+        public event AddPREventHandler AddedPR;
+        public event SetSpeedEventHandler SettedSpeed;
+        public event SetDropEventHandler SettedDrop;
+        public event EndPREventHandler EndedPR;
+        public event EndCoatingEvntHandler EndedCoating;
         public int No { get; }
         public int Spin
         {
@@ -75,6 +82,11 @@ namespace WaferLlineLib
             {
                 bwafers.Add(new Wafer());
             }
+            if(AddedWafer != null)
+            {
+                AddedWafer(this, new AddWaferEventArgs(No, BWCnt));
+            }
+            
             return bwafers.Count;
         }
         public int AWCnt
@@ -92,15 +104,27 @@ namespace WaferLlineLib
                 pcnt = avail;
             }
             PCnt += pcnt;
+            if(AddedPR != null)
+            {
+                AddedPR(this, new AddPREventArgs(No, PCnt));
+            }
             return PCnt;
         }
         public void SetSpin(int spin)
         {
             Spin = spin;
+            if(SettedSpeed != null)
+            {
+                SettedSpeed(this, new SetSpeedEventArgs(No, Spin));
+            }
         }
         public void SetDrop(int drop)
         {
             Drop = drop;
+            if (SettedDrop != null)
+            {
+                SettedDrop(this, new SetDropEventArgs(No, Drop));
+            }
         }
 
         Random rand = new Random();
@@ -108,6 +132,10 @@ namespace WaferLlineLib
         {
             if (nowp == 0)
             {
+                if (EndedPR != null)
+                {
+                    EndedPR(this, new EndPREventArgs(No));
+                }
                 if (PCnt == 0)
                 {
                     return false;
@@ -130,6 +158,10 @@ namespace WaferLlineLib
             {
                 awafers.Add(nwafer);
                 nwafer = null;
+                if (EndedCoating != null)
+                {
+                    EndedCoating(this, new EndCoatingEventArgs(No, BWCnt, AWCnt));
+                }
             }
             return true;
         }

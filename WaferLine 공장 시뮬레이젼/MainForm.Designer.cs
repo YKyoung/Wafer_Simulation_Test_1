@@ -47,7 +47,6 @@ namespace WaferLine_공장_시뮬레이젼
             this.label4 = new System.Windows.Forms.Label();
             this.lb_selno = new System.Windows.Forms.Label();
             this.cb_awafer = new System.Windows.Forms.ComboBox();
-            this.wp_awafer = new WaferLineControlLib.WaferPanel();
             this.lb_spin = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lb_drop = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@ namespace WaferLine_공장_시뮬레이젼
             this.btn_manage = new System.Windows.Forms.Button();
             this.ts_lb2 = new System.Windows.Forms.StatusStrip();
             this.ts_lb = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pn_awafer = new WaferLineControlLib.WaferPanel();
             this.ts_lb2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,6 +180,7 @@ namespace WaferLine_공장_시뮬레이젼
             this.btn_add.TabIndex = 7;
             this.btn_add.Text = "추가";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // label4
             // 
@@ -206,14 +207,7 @@ namespace WaferLine_공장_시뮬레이젼
             this.cb_awafer.Name = "cb_awafer";
             this.cb_awafer.Size = new System.Drawing.Size(144, 20);
             this.cb_awafer.TabIndex = 10;
-            // 
-            // wp_awafer
-            // 
-            this.wp_awafer.Location = new System.Drawing.Point(331, 184);
-            this.wp_awafer.Name = "wp_awafer";
-            this.wp_awafer.Size = new System.Drawing.Size(144, 144);
-            this.wp_awafer.TabIndex = 11;
-            this.wp_awafer.Wafer = null;
+            this.cb_awafer.SelectedIndexChanged += new System.EventHandler(this.cb_awafer_SelectedIndexChanged);
             // 
             // lb_spin
             // 
@@ -283,8 +277,9 @@ namespace WaferLine_공장_시뮬레이젼
             this.btn_manage.Name = "btn_manage";
             this.btn_manage.Size = new System.Drawing.Size(86, 25);
             this.btn_manage.TabIndex = 19;
-            this.btn_manage.Text = "관";
+            this.btn_manage.Text = "관리";
             this.btn_manage.UseVisualStyleBackColor = true;
+            this.btn_manage.Click += new System.EventHandler(this.btn_manage_Click);
             // 
             // ts_lb2
             // 
@@ -302,6 +297,14 @@ namespace WaferLine_공장_시뮬레이젼
             this.ts_lb.Size = new System.Drawing.Size(218, 17);
             this.ts_lb.Text = "가장 최근에 발생한 사건을 보여줍니다.";
             // 
+            // pn_awafer
+            // 
+            this.pn_awafer.Location = new System.Drawing.Point(331, 184);
+            this.pn_awafer.Name = "pn_awafer";
+            this.pn_awafer.Size = new System.Drawing.Size(144, 144);
+            this.pn_awafer.TabIndex = 11;
+            this.pn_awafer.Wafer = null;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -316,7 +319,7 @@ namespace WaferLine_공장_시뮬레이젼
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lb_spin);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.wp_awafer);
+            this.Controls.Add(this.pn_awafer);
             this.Controls.Add(this.cb_awafer);
             this.Controls.Add(this.lb_selno);
             this.Controls.Add(this.label4);
@@ -358,7 +361,7 @@ namespace WaferLine_공장_시뮬레이젼
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb_selno;
         private System.Windows.Forms.ComboBox cb_awafer;
-        private WaferLineControlLib.WaferPanel wp_awafer;
+        private WaferLineControlLib.WaferPanel pn_awafer;
         private System.Windows.Forms.Label lb_spin;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lb_drop;
