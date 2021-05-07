@@ -334,6 +334,7 @@ namespace WaferLine_공장_시뮬레이젼
             this.Controls.Add(this.cbox_ip);
             this.Name = "MainForm";
             this.Text = "WaferLine 공장 Main Form";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ts_lb2.ResumeLayout(false);
             this.ts_lb2.PerformLayout();
             this.ResumeLayout(false);

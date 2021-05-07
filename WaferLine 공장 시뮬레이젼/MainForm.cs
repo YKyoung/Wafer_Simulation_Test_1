@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WaferLineCommLib;
 using WaferLlineLib;
 
 namespace WaferLine_공장_시뮬레이젼
@@ -125,6 +126,11 @@ namespace WaferLine_공장_시뮬레이젼
         {
             pn_awafer.Wafer = cb_awafer.SelectedItem as Wafer;
             pn_awafer.Invalidate();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            cbox_ip.DataSource = MyNetwork.Addresses;
         }
     }
 }
