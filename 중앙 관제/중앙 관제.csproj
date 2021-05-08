@@ -79,5 +79,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WaferLine 공장 시뮬레이젼\WaferLine 공장 시뮬레이젼.csproj">
+      <Project>{c221f843-2dfc-4488-9af8-1ee63b818ad3}</Project>
+      <Name>WaferLine 공장 시뮬레이젼</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WaferLineCommLib\WaferLineCommLib.csproj">
+      <Project>{34d5931c-47fa-481e-8585-558b8c718db0}</Project>
+      <Name>WaferLineCommLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WaferLlineLib\WaferLlineLib.csproj">
+      <Project>{bc62bccd-65bb-4356-afdc-4cc2971fd635}</Project>
+      <Name>WaferLlineLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

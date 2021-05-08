@@ -131,6 +131,39 @@ namespace WaferLine_공장_시뮬레이젼
         private void MainForm_Load(object sender, EventArgs e)
         {
             cbox_ip.DataSource = MyNetwork.Addresses;
+            cbox_ip.DataSource = MyNetwork.Addresses;
+            Manager manager = Manager.Singleton;
+            manager.RecvStsEndPoint += Manager_RecvStsEndPoint;
+        }
+
+        private void Manager_RecvStsEndPoint(object sender, RecvStsEndPtEventArgs e)
+        {
+            if (this.InvokeRequired)
+            {
+                RecvStsEndPtEventHandler dele = Manager_RecvStsEndPoint;
+                this.Invoke(dele, new object[] { sender, e });
+            }
+            else
+            {
+                Manager manager = Manager.Singleton;
+                foreach(ListViewItem lvi in lv_line.Items)
+                {
+                    int no = int.Parse(lvi.SubItems[0].Text);
+                    manager.AddLine(no);
+                    manager.AddWafer(no, int.Parse(lvi.SubItems[1].Text));
+                    //error
+                }
+                ts_lb.Text = String.Format("{0}:{1} 연결", e.IPAddress, e.Port);
+            }
+            
+        }
+
+        private void btn_set_Click(object sender, EventArgs e)
+        {
+            int port = int.Parse(tbox_port.Text);
+            string ip = cbox_ip.Text;
+            Manager manager = Manager.Singleton;
+            manager.StartServer(ip, port);
         }
     }
 }

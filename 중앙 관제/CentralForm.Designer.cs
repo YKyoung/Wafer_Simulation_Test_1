@@ -86,6 +86,7 @@ namespace 중앙_관제
             this.btn_set_fa.TabIndex = 2;
             this.btn_set_fa.Text = "공장설정";
             this.btn_set_fa.UseVisualStyleBackColor = true;
+            this.btn_set_fa.Click += new System.EventHandler(this.btn_set_fa_Click);
             // 
             // btm_set_me
             // 
@@ -95,6 +96,7 @@ namespace 중앙_관제
             this.btm_set_me.TabIndex = 5;
             this.btm_set_me.Text = "중앙관제설정";
             this.btm_set_me.UseVisualStyleBackColor = true;
+            this.btm_set_me.Click += new System.EventHandler(this.btm_set_me_Click);
             // 
             // tbox_me_port
             // 
@@ -314,7 +316,7 @@ namespace 중앙_관제
             this.columnHeader2.Text = "코팅할 Wafer";
             this.columnHeader2.Width = 104;
             // 
-            // Form1
+            // CentralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -346,8 +348,9 @@ namespace 중앙_관제
             this.Controls.Add(this.btn_set_fa);
             this.Controls.Add(this.tbox_fa_port);
             this.Controls.Add(this.tbox_fa_ip);
-            this.Name = "Form1";
+            this.Name = "CentralForm";
             this.Text = "중앙관제";
+            this.Load += new System.EventHandler(this.CentralForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbar_wafer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbar_pr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbar_spin)).EndInit();

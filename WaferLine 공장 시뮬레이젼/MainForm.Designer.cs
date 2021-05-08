@@ -84,6 +84,7 @@ namespace WaferLine_공장_시뮬레이젼
             this.btn_set.TabIndex = 2;
             this.btn_set.Text = "설정";
             this.btn_set.UseVisualStyleBackColor = true;
+            this.btn_set.Click += new System.EventHandler(this.btn_set_Click);
             // 
             // label1
             // 
