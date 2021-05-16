@@ -53,6 +53,10 @@
     <Compile Include="RecvStsEndPtEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WaferLineControlLib\WaferLineControlLib.csproj">
+      <Project>{77a9d5b7-eafd-49ef-adc4-4fd7066f2c3d}</Project>
+      <Name>WaferLineControlLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WaferLlineLib\WaferLlineLib.csproj">
       <Project>{bc62bccd-65bb-4356-afdc-4cc2971fd635}</Project>
       <Name>WaferLlineLib</Name>

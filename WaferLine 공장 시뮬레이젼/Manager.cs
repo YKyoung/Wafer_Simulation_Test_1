@@ -65,5 +65,65 @@ namespace WaferLine_공장_시뮬레이젼
                 cc = null;
             }
         }
+
+        public void AddPR(int no, int pcnt)
+        {
+            if (cc == null)
+            {
+                return;
+            }
+            if (cc.SendAddPR(no, pcnt) == false)
+            {
+                cc = null;
+            }
+        }
+
+        public void SetSpeed(int no, int spin)
+        {
+            if (cc == null)
+            {
+                return;
+            }
+            if (cc.SendSetSpeed(no, spin) == false)
+            {
+                cc = null;
+            }
+        }
+
+        public void SetDrop(int no, int drop)
+        {
+            if (cc == null)
+            {
+                return;
+            }
+            if (cc.SendSetDrop(no, drop) == false)
+            {
+                cc = null;
+            };
+        }
+
+        public void EndedPR(int no)
+        {
+            if (cc == null)
+            {
+                return;
+            }
+            if (cc.SendEndPR(no) == false)
+            {
+                cc = null;
+            }
+        }
+
+        public void EndedCoarting(int no, int bwcnt, int awcnt)
+        {
+            if (cc == null)
+            {
+                return;
+            }
+            if (cc.SendEndCoating(no, bwcnt, awcnt) == false)
+            {
+                cc = null;
+            }
+        }
     }
 }

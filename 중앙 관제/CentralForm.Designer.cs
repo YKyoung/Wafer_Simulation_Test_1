@@ -32,7 +32,7 @@ namespace 중앙_관제
             this.tbox_fa_ip = new System.Windows.Forms.TextBox();
             this.tbox_fa_port = new System.Windows.Forms.TextBox();
             this.btn_set_fa = new System.Windows.Forms.Button();
-            this.btm_set_me = new System.Windows.Forms.Button();
+            this.btn_set_me = new System.Windows.Forms.Button();
             this.tbox_me_port = new System.Windows.Forms.TextBox();
             this.tbox_me_ip = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,15 +88,15 @@ namespace 중앙_관제
             this.btn_set_fa.UseVisualStyleBackColor = true;
             this.btn_set_fa.Click += new System.EventHandler(this.btn_set_fa_Click);
             // 
-            // btm_set_me
+            // btn_set_me
             // 
-            this.btm_set_me.Location = new System.Drawing.Point(375, 57);
-            this.btm_set_me.Name = "btm_set_me";
-            this.btm_set_me.Size = new System.Drawing.Size(98, 20);
-            this.btm_set_me.TabIndex = 5;
-            this.btm_set_me.Text = "중앙관제설정";
-            this.btm_set_me.UseVisualStyleBackColor = true;
-            this.btm_set_me.Click += new System.EventHandler(this.btm_set_me_Click);
+            this.btn_set_me.Location = new System.Drawing.Point(375, 57);
+            this.btn_set_me.Name = "btn_set_me";
+            this.btn_set_me.Size = new System.Drawing.Size(98, 20);
+            this.btn_set_me.TabIndex = 5;
+            this.btn_set_me.Text = "중앙관제설정";
+            this.btn_set_me.UseVisualStyleBackColor = true;
+            this.btn_set_me.Click += new System.EventHandler(this.btn_set_me_Click);
             // 
             // tbox_me_port
             // 
@@ -305,6 +305,7 @@ namespace 중앙_관제
             this.lv_line.TabIndex = 27;
             this.lv_line.UseCompatibleStateImageBehavior = false;
             this.lv_line.View = System.Windows.Forms.View.Details;
+            this.lv_line.SelectedIndexChanged += new System.EventHandler(this.lv_line_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -342,7 +343,7 @@ namespace 중앙_관제
             this.Controls.Add(this.lb_wafer);
             this.Controls.Add(this.tbar_wafer);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btm_set_me);
+            this.Controls.Add(this.btn_set_me);
             this.Controls.Add(this.tbox_me_port);
             this.Controls.Add(this.tbox_me_ip);
             this.Controls.Add(this.btn_set_fa);
@@ -365,7 +366,7 @@ namespace 중앙_관제
         private System.Windows.Forms.TextBox tbox_fa_ip;
         private System.Windows.Forms.TextBox tbox_fa_port;
         private System.Windows.Forms.Button btn_set_fa;
-        private System.Windows.Forms.Button btm_set_me;
+        private System.Windows.Forms.Button btn_set_me;
         private System.Windows.Forms.TextBox tbox_me_port;
         private System.Windows.Forms.TextBox tbox_me_ip;
         private System.Windows.Forms.Label label1;

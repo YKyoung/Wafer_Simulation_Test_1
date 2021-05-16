@@ -152,6 +152,10 @@ namespace WaferLine_공장_시뮬레이젼
                     manager.AddLine(no);
                     manager.AddWafer(no, int.Parse(lvi.SubItems[1].Text));
                     //error
+                    WaferLine wl = lvi.Tag as WaferLine;
+                    manager.AddPR(no, wl.PCnt);
+                    manager.SetSpeed(no, wl.Spin);
+                    manager.SetDrop(no, wl.Drop);
                 }
                 ts_lb.Text = String.Format("{0}:{1} 연결", e.IPAddress, e.Port);
             }

@@ -115,7 +115,7 @@ namespace WaferLlineLib
             Spin = spin;
             if(SettedSpeed != null)
             {
-                SettedSpeed(this, new SetSpeedEventArgs(No, Spin));
+                SettedSpeed(this, new SetSpeedEventArgs(No, spin));
             }
         }
         public void SetDrop(int drop)
@@ -123,7 +123,7 @@ namespace WaferLlineLib
             Drop = drop;
             if (SettedDrop != null)
             {
-                SettedDrop(this, new SetDropEventArgs(No, Drop));
+                SettedDrop(this, new SetDropEventArgs(No, drop));
             }
         }
 

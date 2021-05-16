@@ -37,6 +37,8 @@ namespace WaferLine_공장_시뮬레이젼
 
         private void WLine_SettedDrop(object sender, SetDropEventArgs e)
         {
+            Manager manager = Manager.Singleton;
+            manager.SetDrop(e.No, e.Drop);
             if (SettedDrop != null)
             {
                 SettedDrop(this, e);
@@ -45,7 +47,9 @@ namespace WaferLine_공장_시뮬레이젼
 
         private void WLine_SettedSpeed(object sender, SetSpeedEventArgs e)
         {
-            if(SettedSpeed != null)
+            Manager manager = Manager.Singleton;
+            manager.SetSpeed(No, e.Speed);
+            if (SettedSpeed != null)
             {
                 SettedSpeed(this, e);
             }
@@ -54,6 +58,8 @@ namespace WaferLine_공장_시뮬레이젼
 
         private void WLine_EndedPR(object sender, EndPREventArgs e)
         {
+            Manager manager = Manager.Singleton;
+            manager.EndedPR(e.No);
             if (EndedPR != null)
             {
                 EndedPR(this, e);
@@ -62,6 +68,8 @@ namespace WaferLine_공장_시뮬레이젼
 
         private void WLine_EndedCoating(object sender, EndCoatingEventArgs e)
         {
+            Manager manager = Manager.Singleton;
+            manager.EndedCoarting(No, e.BWCnt, e.AWCnt);
             if (EndedCoating != null)
             {
                 EndedCoating(this, e);
@@ -70,6 +78,8 @@ namespace WaferLine_공장_시뮬레이젼
 
         private void WLine_AddedPR(object sender, AddPREventArgs e)
         {
+            Manager manager = Manager.Singleton;
+            manager.AddPR(e.No, e.PCnt);
             if (AddedPR != null)
             {
                 AddedPR(this, e);
@@ -78,6 +88,8 @@ namespace WaferLine_공장_시뮬레이젼
 
         private void WLine_AddedWafer(object sender, AddWaferEventArgs e)
         {
+            Manager manager = Manager.Singleton;
+            manager.AddWafer(e.No, e.BWCnt);
             if (AddedWafer != null)
             {
                 AddedWafer(this, e);
